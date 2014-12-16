@@ -1,0 +1,18 @@
+<ul>
+    {{#each todos}}
+    <li id="todoli-{{attributes.todoId}}">
+        {{#if attributes.active "==" "yes"}}
+        <input type="checkbox" class="todo-check"id="todo-{{attributes.todoListId}}-{{attributes.todoId}}" />
+        <label id="todolabel-{{attributes.todoId}}">{{attributes.description}}</label>
+        <span class="delete-todo" id="delete-{{attributes.todoListId}}-{{attributes.todoId}}">delete</span>
+        <span class="edit-todo" id="edit-{{attributes.todoListId}}-{{attributes.todoId}}">Edit</span>
+        {{/if}}
+        {{#if attributes.active "==" "no"}}
+        <input type="checkbox" class="todo-check"id="todo-{{attributes.todoListId}}-{{attributes.todoId}}" />
+        <label id="todolabel-{{attributes.todoId}}"><strike>{{attributes.description}}</strike></label>
+        <span class="delete-todo" id="delete-{{attributes.todoListId}}-{{attributes.todoId}}">delete</span>
+
+        {{/if}}
+    </li>
+    {{/each}}
+</ul>

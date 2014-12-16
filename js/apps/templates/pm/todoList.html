@@ -1,0 +1,24 @@
+<h4>Explore - To Do List</h4>
+<div class="todolist-new">
+    <input type="text" id="todolistname"/>
+    <input type="button" id="todolistbtn" value="add To Do list"/>
+</div>
+
+<div id="todo-list" class="todo-list">
+    {{#each todoLists}}
+    <h1 id="todolist-{{attributes.todoListId}}" class="todo-header">{{attributes.listname}} - {{attributes.todoListId}}</h1>
+    <div class="todos-container" id="todos-{{attributes.todoListId}}">
+        Loading ....!!
+    </div>
+    <div class="todo-new">
+        <input type="text" class="tododescription" id="tododescription-{{attributes.todoListId}}"/>
+        <select id="assignedTo-{{attributes.todoListId}}">
+            <option value="">Assign To</option>
+            {{#each users}}
+            <option value="{{attributes.userId}}">{{attributes.firstName}}</option>
+            {{/each}}
+        </select>
+        <input type="button" class="todobtn" id="todobtn-{{attributes.todoListId}}" value="add To Do"/>
+    </div>
+    {{/each}}
+</div>
